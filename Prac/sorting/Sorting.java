@@ -36,6 +36,22 @@ public class Sorting {
         }
     }
 
+     public void bubbleSort() {
+        int n = array.length;
+        boolean swapped;
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false; // Track whether a swap was made
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                    swapped = true; // A swap occurred
+                }
+            }
+            // If no swaps were made, the array is sorted
+            if (!swapped) break;
+        }
+    }
+
     private static void swap(int[] arr, int a, int b){
         int temp = arr[a];
         arr[a] = arr[b];
